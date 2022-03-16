@@ -2,7 +2,7 @@ console.log("Iniciando con el proyecto")
 
 const modelos = ["Tesla", "Ford", "Dodge"]
 
-let teslaModels = ["Model 3", "Model S", " Model X"]
+let teslaModels = ["Model 3", "Model S", " Model X", "Model Y", "Rocket"]
 let fordModels = ["Mustang", "Explorer", "F-150"]
 let dodgeModels = ["Charger", "Challenger", "Durango"]
 
@@ -15,20 +15,20 @@ function auto( marca, modelo, anio){
     this.anio = anio
 }
 
-function generar_auto( cantidad_generar ){
+function generarAuto( cantidad_generar ){
     listaAutos = []
     for( let i = 0; i < cantidad_generar; i++){
-        marca = Math.floor( Math.random() * modelos.length )
+        marca = modelos[ Math.floor( Math.random() * modelos.length ) ]
         modelo = ""
         switch( marca ){
             case "Tesla" :
-                modelo = Math.floor( Math.random() * teslaModels.length )
+                modelo = teslaModels[ Math.floor( Math.random() * teslaModels.length ) ]
             break
             case "Ford" :
-                modelo = Math.floor( Math.random() * fordModels.length )
+                modelo = fordModels[ Math.floor( Math.random() * fordModels.length ) ]
             break
             case "Dodge" :
-                modelo = Math.floor( Math.random() * dodgeModels.length )
+                modelo = dodgeModels[ Math.floor( Math.random() * dodgeModels.length ) ]
             break
             
         }
@@ -40,3 +40,6 @@ function generar_auto( cantidad_generar ){
     }
     return listaAutos
 }
+
+listaAutomoviles = generarAuto( 20 )
+console.log( listaAutomoviles)
